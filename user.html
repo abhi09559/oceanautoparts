@@ -1,0 +1,47 @@
+<link rel="stylesheet" type="text/css" href="public/dist/css/style2.css">
+<link rel="stylesheet" href="public/bootstrap/css/bootstrap.min.css">
+<script src="public/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="public/bootstrap/js/bootstrap.min.js"></script> 
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138671404-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-138671404-2');
+</script>
+
+
+<section class="content LR-page">
+	<div class="form-holder">
+		<img src="public/theme/dist/images/logo-black.png">
+		<h3>Parts Provider Login Only</h3>
+<h4>Enter your login details below:</4>
+        <!-- form start -->
+        <div class="box-body my-form-body">
+                     
+            <form action="https://www.selectusedparts.com/frontend/users/login" class="form-horizontal" method="post" accept-charset="utf-8">
+ 
+              <div class="form-group">
+                  <input type="text" name="username" class="form-control" id="username" value="" required placeholder="Username">
+                </div>
+              <div class="form-group">
+                  <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+				  <p class="fg-pass"><a href="#" class=" ">Forgot Password</a></p>
+                </div>
+              <div class="form-group">
+                  <input type="submit" name="submit" value="Login" class="btn btn-style">
+              </div>
+            </form>			<p class="bot-note">Click <a href="frontend/users/register.html">Here</a> if you don't have an account</p>
+        </div>
+	</div>
+
+ 
+</section>
+<script type="text/javascript">
+	  $(".flash-msg").fadeTo(2000, 500).slideUp(500, function(){
+	    $(".flash-msg").slideUp(500);
+	});
+	</script>
