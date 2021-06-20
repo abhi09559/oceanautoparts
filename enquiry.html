@@ -153,40 +153,40 @@
 				<div class="form-group col-md-12 col-lg-12"> 
 					<div class="row" id="div1"> 
 						<div class="form-group col-md-6 col-lg-3">  
-							<label for="make" class="">NAME *</label>
+							<label for="make" class="">NAME </label>
 							
-								<input type="text" name="name">
+								<input type="text" name="Name" id="Name">
 														
 						</div>
 						<div class="form-group col-md-6 col-lg-3" id="modeldiv">  
-							<label for="model" class="">Email *</label>
-							<input type="text" Email="Email">
+							<label for="model" class="">Email </label>
+							<input type="text" name="Sender" id="Sender" Email="Email">
 								
 						</div>
 						<div class="form-group col-md-6 col-lg-3">  
-							<label for="year"  class="">Phone no*</label>
-							<input type="text" Phoneno="Phone no">
+							<label for="year"  class="">Phone no</label>
+							<input type="text" id="phone" name="phone" placeholder="(123)-456-789">
 						</div>
 						<div class="form-group col-md-6 col-lg-3">  
 						<label for="year"  class="">Year Make</label>
-						<input type="text" year="Year">
+						<input type="text" name="yearmake" id="yearmake" year="Year">
 						</div>
                   
                   <div class="form-group col-md-6 col-lg-3">  
-                    <label for="Partname" class="">Part Name *</label>
-                    <input type="text" name="partname[]" id="partname" class="form-control" required>
+                    <label for="Partname" class="">Part Name </label>
+                    <input type="text" name="partname" id="partname" class="form-control" required>
                   </div>
                   <div class="form-group col-md-6 col-lg-3">  
                     <label for="Partname" class="">Make</label>
-                    <input type="text" name="partnum[]" id="partnum" class="form-control">
+                    <input type="text" name="make" id="make" class="form-control">
                   </div>
                   <div class="form-group col-md-6 col-lg-3">  
                     <label for="Partname" class="">Model</label>
-                    <input type="text" name="chasis[]" id="chasis" class="form-control">
+                    <input type="text" name="model" id="model" class="form-control">
                   </div>
                   <div class="form-group col-md-6 col-lg-3" style="display: none;">  
                     <label for="Partname" class="">Fuel Type</label>
-                    <select name="fuel_type" class="form-control">
+                    <select name="fuel_type" id="fuel_type" class="form-control">
                      <option value="">Select Fuel Type</option>
                      <option value="petrol">Petrol</option>
                      <option value="diesel">Diesel</option>		
@@ -194,22 +194,10 @@
                   </div>  
                   <div class="form-group col-md-6 col-lg-3">  
                     <label for="Partname" class="">Remarks</label>
-                    <textarea name="remarks[]" id="remarks" class="form-control"></textarea>
+                    <textarea name="remarks" id="remarks" class="form-control"></textarea>
                   </div>
-				<div class="form-group col-md-12 col-lg-12">
-					<a id="morepic" class="btn btn-style morepic">Add Photos</a>
-				</div>
-				<div class="form-group col-md-12 col-lg-12">
-					<div class="row" id="morephotos">
-						<div class="form-group col-md-12 col-lg-2 countpicdiv">
-							<input type="file" name="featured_image1[]" id="featured_image1" data-id="1" class="form-control featured_image">
-							<input type="hidden" name="featured1[]" id="featured1" value="">
-							<div id="uploaded_image1"></div>
-							<div class="upload_container" id="upload_container1"></div>
-							<div id="removed_image1"></div>
-						</div>
-					</div>
-				</div>
+                  
+				
 			</div>
 		</div>
 	</div>
@@ -223,10 +211,8 @@
     </div>
 
     <div class="row" id="part">
-     <div class="form-group col-md-12 col-lg-12 text-right" >
-         <a id="add" class="btn btn-style">Add New <i class="fas fa-plus"></i> </a>
-      </div>
       <div class="form-group col-md-12 col-lg-12 text-right" >
+
          <input type="hidden" name="countContainers" id="countContainers" value="1">
          <input type="submit" name="submit" value="Next" id="submit" class="btn btn-style" required>
       </div>
@@ -236,6 +222,83 @@
   </div>
 </div>
 </section>
+
+<!-- adding mail script -->
+	
+	<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+    <script
+    src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous"></script>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+   
+  <script>  
+  
+       function sendmail(){
+      
+              var name = $('#Name').val();
+              var email = $('#Sender').val();
+              var Phone = $('#phone').val();
+  
+              var year = $('#yearmake').val();
+              var Partnm = $('#partname').val();
+              var making = $('#make').val();
+  
+              var Model = $('#model').val();
+              var Fueltype = $('#fuel_type').val();
+              var Remarks = $('#remarks').val();
+  
+  
+              var Body='Name: '+name+
+                      '<br>Email: '+email+
+                      '<br>Phone Number: '+Phone+
+  
+                      '<br>Year: '+year+
+                      '<br>Part Name: '+Partnm+
+                      '<br>Make: '+making+
+  
+                      '<br>Model: '+Model+
+                      '<br>Fuel type: '+Fueltype+
+                      '<br>Remarks: '+Remarks;			
+              
+              console.log(name, email, Phone, year, Partnm, making, Model, Fueltype, Remarks);
+  
+              Email.send({
+                  Host : "smtp.gmail.com",
+                  Username : 'leadscollectors168@gmail.com',
+                  Password : "Forbusiness@1997$",
+                  To: 'abhileeho147@gmail.com', 'oceanautoparts312@gmail.com',
+                  From: "leadscollectors168@gmail.com",
+                  Subject: "New Parts request from site"+name,
+                  Body: Body
+              }).then(
+                  message =>{
+                      console.log (message);
+                      if(message=='OK'){
+                      alert('Your REQUEST has been sent. Thank you for your request.');
+                      }
+                      else{
+                          console.error (message);
+                          alert('There is error at sending request. ')
+                          
+                      }
+  
+                  }
+              );
+  
+  
+  
+          }
+  
+  
+      </script>
+   </script>
+
+
+
+
+
+
 <link rel="stylesheet" href="code.jquery.com/ui/1.12.1/themes/base/jquery-ui.html">
 <link rel="stylesheet" href="jqueryui.com/jquery-wp-content/themes/jqueryui.com/style.html">
 <script src="code.jquery.com/ui/1.12.1/jquery-ui.html"></script>
