@@ -214,7 +214,7 @@
       <div class="form-group col-md-12 col-lg-12 text-right" >
 
          <input type="hidden" name="countContainers" id="countContainers" value="1">
-         <input type="submit" name="submit" value="Submit" id="submit" class="btn btn-style" required>
+         <input type="submit" name="submit" value="Submit" id="submit" class="btn btn-style" onclick="submitForm()" required>
       </div>
 
     </div>
@@ -272,15 +272,25 @@
                   Subject: "New Parts request from "+name,
                   Body: Body
               }).then(
-                 message =>{
-                      console.log (message);
+                 function submitForm() {
+                     /* console.log (message);
                       if(message=='OK'){
                       alert('Your REQUEST has been sent. Thank you for your request.');
                       }
                       else{
                           console.error (message);
                           alert('There is error at sending request. ');                          
-                      } 
+                      }*/ 
+			
+   // Get the first form with the name
+   // Usually the form name is not repeated
+   // but duplicate names are possible in HTML
+   // Therefore to work around the issue, enforce the correct index
+   var frm = document.getElementsByName('contact-form')[0];
+   frm.submit(); // Submit the form
+   frm.reset();  // Reset all form data
+   return false; // Prevent page refresh
+
 			 
                   }
               );  
