@@ -136,7 +136,7 @@
 <section class="innerpage-sec">
 <div class="container-fluid">
 	<div class="container enquiry-form">
-    <form action="javascript:sendmail()" method="post" class="form-horizontal" enctype="multipart/form-data"  accept-charset="utf-8">
+    <form action="javascript:sendmail()" method="post"  enctype="multipart/form-data"  accept-charset="utf-8">
         <div class="row">
 		    </div>
     <div class="row part input_fields_wrap" id="part">
@@ -214,8 +214,8 @@
       <div class="form-group col-md-12 col-lg-12 text-right" >
 
          <input type="hidden" name="countContainers" id="countContainers" value="1">
-         <!--input type="submit" name="submit" value="Submit" id="submit" class="btn btn-style" onclick="submitForm()" required-->
-	        <input type="button" value="Submit" id="btnsubmit" onclick="submitForm()">
+         <input type="submit" name="submit" value="Submit" id="submit" class="btn btn-style" onclick="submitForm()" required>
+	      
       </div>
 
     </div>
@@ -273,25 +273,15 @@
                   Subject: "New Parts request from "+name,
                   Body: Body
               }).then(
-                 submitForm => {
-                     /* console.log (message);
+                 message => {
+                     console.log (message);
                       if(message=='OK'){
                       alert('Your REQUEST has been sent. Thank you for your request.');
                       }
                       else{
                           console.error (message);
                           alert('There is error at sending request. ');                          
-                      }*/ 
-			
-   // Get the first form with the name
-   // Usually the form name is not repeated
-   // but duplicate names are possible in HTML
-   // Therefore to work around the issue, enforce the correct index
-   var frm = document.getElementsByName('contact-form')[0];
-   frm.submit(); // Submit the form
-   frm.reset();  // Reset all form data
-   return false; // Prevent page refresh
-
+                      }  
 			 
                   }
               );  
