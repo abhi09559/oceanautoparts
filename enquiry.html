@@ -136,7 +136,7 @@
 <section class="innerpage-sec">
 <div class="container-fluid">
 	<div class="container enquiry-form">
-    <form action="javascript:sendmail()" method="post" class="form-horizontal" enctype="multipart/form-data" accept-charset="utf-8">
+    <form action="javascript:sendmail()" method="post" class="form-horizontal" enctype="multipart/form-data" id="myForm" accept-charset="utf-8">
         <div class="row">
 		    </div>
     <div class="row part input_fields_wrap" id="part">
@@ -280,7 +280,8 @@
                       else{
                           console.error (message);
                           alert('There is error at sending request. ');                          
-                      }  
+                      } 
+			  document.getElementById("myForm").reset();
                   }
               );  
           }
