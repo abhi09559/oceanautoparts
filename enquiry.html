@@ -4719,7 +4719,7 @@
 						</div>
 						<div class="col">  
 							
-							<select name="part" id="part" class="myselect">
+							<select name="Partname" id="Partname" class="myselect">
 															<option value="null"> Select Part </option>															
 															<option value="Front Differential">Front Differential </option>
 															<option value="Front Axel">Front Axel </option>
@@ -4962,7 +4962,7 @@
       
               var year = $('#year').val();
               var make = $('#make').val();
-              var part = $('#part').val();  
+              var PartName = $('#Partname').val();  
 	       console.log(part);
               var engine = $('#engine').val();
               var transmission = $('#transmission').val();
@@ -4980,7 +4980,7 @@
               var Body='<b>Part request details</b><br><br>Year: '+year+
   
                       '<br><br>Make/Model: '+make+
-                      '<br><br>Part Name: '+part+
+                      '<br><br>Part Name: '+PartName+
                       '<br><br>Engine Size: '+engine+
   
                       '<br><br>Transmission: '+transmission+
@@ -4993,7 +4993,7 @@
 		  '<br><br>Zip code: '+code+
 		  '<br><br><br>' +note;
               
-              console.log(year, make, part, engine, transmission, fuel, message, name, email, phone, code);
+              console.log(year, make, PartName, engine, transmission, fuel, message, name, email, phone, code);
   
               Email.send({
                   Host : "smtp.gmail.com",
