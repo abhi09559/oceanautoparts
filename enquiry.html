@@ -156,7 +156,7 @@
 							
 							
 						<select id="year" name="year"
-																		class="myselect">
+																		class="form-control">
 							
 																		<option value="">Select Year</option>
 																		<option value="2019">2021</option>
@@ -234,7 +234,7 @@
 							
 							    
 																							<select id="make" name="make"
-																		class="myselect">
+																		class="form-control">
 																		<option value="">Select Make/Model</option>
 																		<option value="AMC Ambassador"
 																			data-calc-value="AMC Ambassador">
@@ -4720,7 +4720,7 @@
 						</div>
 						<div class="col">  
 							
-							<select name="part" id="part">
+							<select name="part" id="part" class="form-control">
 															<option value="null">Select Part</option>
 															
 															<option value="Front Differential">Front Differential</option>
@@ -4742,7 +4742,7 @@
 						<br>
 						
 						<div class="form-group col-md-6 col-lg-3">  
-						<select  name="engine" id="engine">
+						<select  name="engine" id="engine" class="form-control">
     <option value="null">Select Engine Size</option>
 
     <option value="1.1 Liter">1.1 Liter</option>
@@ -4848,7 +4848,7 @@
 						</div>
                   
                   <div class="form-group col-md-6 col-lg-3">  
-                    <select name="transmission" id="transmission">
+                    <select name="transmission" id="transmission" class="form-control">
     <option value="null">Select Transmission</option>
 
     <option value="AWD-All wheel drive">AWD-All wheel drive</option>
@@ -4903,7 +4903,7 @@
 						
 				</div>
 				<div class="form-group col-md-6 col-lg-3">  
-					<label for="year"  class="">Phone Number</label>
+					<label for="year"  class=""></label>
 					<input type="text" id="phone" name="phone" placeholder="Phone Number" class="form-control">
 				</div>
 				
@@ -4958,38 +4958,42 @@
   
        function sendmail(){
       
-              var name = $('#Name').val();
-              var email = $('#Sender').val();
-              var Phone = $('#phone').val();
+              var year = $('#year').val();
+              var make = $('#make').val();
+              var part = $('#part').val();  
+              var engine = $('#engine').val();
+              var transmission = $('#transmission').val();
+	       var fuel = $('#fuel').val();
+              var message = $('#message').val();
+             
+	      var name = $('#name').val();  
+              var email = $('#email').val();
+              var phone = $('#phone').val();
+              var code = $('#remarks').val();
   
-              var year = $('#yearmake').val();
-              var Partnm = $('#partname').val();
-              var making = $('#make').val();
   
-              var Model = $('#model').val();
-              var Fueltype = $('#fuel_type').val();
-              var Remarks = $('#remarks').val();
+              var Body='<b>Part request details</b><br><br>Year: '+year+
   
+                      '<br><br>Make/Model: '+make+
+                      '<br><br>Part Name: '+part+
+                      '<br><br>Engine: '+engine+
   
-              var Body='Name: '+name+
-                      '<br>Email: '+email+
-                      '<br>Phone Number: '+Phone+
-  
-                      '<br>Year: '+year+
-                      '<br>Part Name: '+Partnm+
-                      '<br>Make: '+making+
-  
-                      '<br>Model: '+Model+
-                      '<br>Fuel type: '+Fueltype+
-                      '<br>Remarks: '+Remarks;			
+                      '<br><br>Transmission: '+transmission+
+                      '<br><br>Fuel type: '+fuel+
+		  
+                      '<br><br>Message: '+message+
+		  '<br><br>Full Name: '+name+
+		  '<br><br>Email Id: '+email+
+		  '<br><br>Phone Number: '+phone+
+		  '<br><br>Zip code: '+code;		  ;			
               
-              console.log(name, email, Phone, year, Partnm, making, Model, Fueltype, Remarks);
+              console.log(year, make, part, engine, transmission, fuel, message, name, email, phone, code);
   
               Email.send({
                   Host : "smtp.gmail.com",
                   Username : 'leadscollectors168@gmail.com',
                   Password : "Forbusiness@1997$",
-                  To: 'abhileeho147@gmail.com', 
+                  To: 'abuosama838@gmail.com', 
                   From: "leadscollectors168@gmail.com",
                   Subject: "New Parts request from "+name,
                   Body: Body
