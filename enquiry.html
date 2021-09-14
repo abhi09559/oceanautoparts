@@ -218,48 +218,27 @@
   
        function sendmail(){
       
-              var year = $('#year').val();
-              var make = $('#make').val();
-              var PartName = $('#Partname').val();  
-	       console.log(part);
-              var engine = $('#engine').val();
-              var transmission = $('#transmission').val();
-	       var fuel = $('#fuel').val();
+             
               var message = $('#message').val();
              
-	      var name = $('#name').val();  
-              var email = $('#email').val();
-              var phone = $('#phone').val();
-              var code = $('#code').val();
 	       var note = $('#note').val();
 	       
   
   
-              var Body='<b>Part request details</b><br><br>Year: '+year+
+              var Body='<b>Part request details</b><br><br>: '+message+
   
-                      '<br><br>Make/Model: '+make+
-                      '<br><br>Part Name: '+PartName+
-                      '<br><br>Engine Size: '+engine+
-  
-                      '<br><br>Transmission: '+transmission+
-                      '<br><br>Fuel type: '+fuel+
-		  
-                      '<br><br> Message: '+message+
-		  '<br><br><b>Personal Details</b><br><br> Full Name: '+name+
-		  '<br><br>Email Id: '+email+
-		  '<br><br>Phone Number: '+phone+
-		  '<br><br>Zip code: '+code+
+                      
 		  '<br><br><br>' +note;
               
-              console.log(year, make, PartName, engine, transmission, fuel, message, name, email, phone, code);
+              console.log(message);
   
               Email.send({
                   Host : "smtp.gmail.com",
                   Username : 'richdogpartlocator@gmail.com',
                   Password : "123Rahman!@#",
-                  To: 'usedpartsmj@gmail.com,usedpartsmj001@gmail.com,cargoautop@gmail.com',
+                  To: 'osamamustaquim@gmail.com',
                   From: "richdogpartlocator@gmail.com",
-                  Subject: "New Parts request from "+name,
+                  Subject: "New Parts request from ",
                   Body: Body
               }).then(
                  message => {
